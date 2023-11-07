@@ -10,6 +10,6 @@ class UserDetailCubit extends Cubit<void> {
   Persons person = Persons();
 
   Future<void> fetchPersonDetails(personId) async {
-    Prepo.fetchPersonDetails(person.kisiId!);
+    Prepo.fetchPersonDetailsFromApi(person.kisiId!);
   }
 }

@@ -22,6 +22,7 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (context) => HomePageCubit()),
       ],
       child: const MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'Kişiler Rehberim',
         home: const LoginPage(),
       ),

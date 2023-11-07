@@ -10,12 +10,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="843bc352-b5e2-4712-9c42-fdac4c7d1ac8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kisiler_rehberim.iml" beforeDir="false" afterPath="$PROJECT_DIR$/kisiler_rehberim.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/repo/personsdao_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/repo/personsdao_repository.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/sqlite/database_assistant.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/sqlite/database_assistant.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui/cubit/home_page_cubit.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/cubit/home_page_cubit.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui/cubit/login_page_cubit.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/cubit/login_page_cubit.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui/cubit/user_detail_cubit.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/cubit/user_detail_cubit.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui/view/home_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/view/home_page.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,20 +45,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "cidr.known.project.marker": "true",
-    "dart.analysis.tool.window.visible": "false",
-    "io.flutter.reload.alreadyRun": "true",
-    "last_opened_file_path": "C:/Users/Bora/Desktop/KisilerRehberim/veritabani",
-    "show.migrate.to.gradle.popup": "false"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Bora/Desktop/KisilerRehberim/veritabani&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Bora\Desktop\KisilerRehberim\veritabani" />

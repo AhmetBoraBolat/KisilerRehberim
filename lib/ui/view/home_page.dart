@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kisiler_rehberim/data/entity/persons.dart';
@@ -172,10 +173,16 @@ class _HomePageState extends State<HomePage> {
                                         ),
                                         TextButton(
                                           onPressed: () {
-                                            final homePageCubit =
-                                                context.read<HomePageCubit>();
-                                            homePageCubit.deletePerson(
-                                                person.kisiId ?? 0);
+                                            if (kDebugMode) {
+                                              print(
+                                                  "KISI ID: ${person.kisiId}");
+                                            }
+                                            context
+                                                .read<HomePageCubit>()
+                                                .deletePerson(person.kisiId);
+                                            context
+                                                .read<HomePageCubit>()
+                                                .loadPersons();
                                             Navigator.of(context).pop();
                                           },
                                           child: const Text('Evet'),
