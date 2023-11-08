@@ -12,12 +12,9 @@
     <list default="true" id="843bc352-b5e2-4712-9c42-fdac4c7d1ac8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/data/repo/personsdao_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/repo/personsdao_repository.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/sqlite/database_assistant.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/sqlite/database_assistant.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/ui/cubit/home_page_cubit.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/cubit/home_page_cubit.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ui/cubit/login_page_cubit.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/cubit/login_page_cubit.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ui/cubit/user_detail_cubit.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/cubit/user_detail_cubit.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/ui/view/home_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/view/home_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ui/view/user_detail.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ui/view/user_detail.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

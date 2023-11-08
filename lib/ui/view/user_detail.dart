@@ -6,7 +6,7 @@ import 'package:kisiler_rehberim/ui/cubit/user_detail_cubit.dart';
 class PersonDetail extends StatefulWidget {
   final Persons person;
   final int personId;
-  PersonDetail({required this.person, required this.personId});
+  const PersonDetail({super.key, required this.person, required this.personId});
 
   @override
   State<PersonDetail> createState() => _PersonDetailState();

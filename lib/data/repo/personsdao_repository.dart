@@ -77,14 +77,24 @@ class PersonsDaoRepository {
     await checkAndRedirect();
 
     return _dio.post('http://www.motosikletci.com/api/kisi-kaydet', data: {
-      'email': email, // Burada sınıfın alanını kullanıyoruz
-      'sifre': password, // Burada sınıfın alanını kullanıyoruz
-      'kisi_id': 0, // Kişi ID'si
-      'city_id': cityId, // Şehir ID'si
-      'town_id': townId, // İlçe ID'si
+      'email': email,
+      'sifre': password,
+      'kisi_id': 0,
+      'city_id': cityId,
+      'town_id': townId,
       'kisi_ad': name,
       'kisi_tel': tel,
-      'cinsiyet': cinsiyet,
+      "cinsiyet": cinsiyet,
+    });
+  }
+
+  Future<Response<Map<String, dynamic>>> getCity() async {
+    return _dio.get('http://www.motosikletci.com/api/iller');
+  }
+
+  Future<Response<Map<String, dynamic>>> getTown(int cityId) async {
+    return _dio.post('http://www.motosikletci.com/api/ilceler', data: {
+      'city_id': cityId,
     });
   }
 

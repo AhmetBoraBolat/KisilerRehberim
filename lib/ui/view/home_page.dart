@@ -77,9 +77,6 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    final _filteredPersons =
-        context.select((HomePageCubit cubit) => cubit.state);
-
     return Scaffold(
       appBar: AppBar(
         title: const Text('Kişiler Rehberi'),
