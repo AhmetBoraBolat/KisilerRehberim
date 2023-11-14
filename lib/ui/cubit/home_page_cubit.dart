@@ -16,7 +16,6 @@ class HomePageCubit extends Cubit<List<Persons>> {
     if (isLoading) {
       return;
     }
-    getCity();
     try {
       isLoading = true;
       final response = await _repo.loadPersonsFromApi(currentPage);
@@ -94,77 +93,5 @@ class HomePageCubit extends Cubit<List<Persons>> {
     } else {
       throw Exception('Kişiyi silerken hata oluştu: ${response.statusCode}');
     }
-  }
-
-  Future<void> fetchPersonDetails(int? personId) async {
-    final response = await _repo.fetchPersonDetailsFromApi(personId);
-    if (response.statusCode == 200) {
-      final Map<String, dynamic>? responseData = response.data;
-      if (responseData!.containsKey('basari') && responseData['basari'] == 1) {
-        // int personId = response.data?['kisi']['kisi_id'];
-      } else {
-        throw Exception(
-            'Kişi bulunamadı veya API hatası: ${responseData['durum']}');
-      }
-    } else {
-      throw Exception(
-          'Kişi bilgilerini alırken hata oluştu: ${response.statusCode}');
-    }
-  }
-
-  Future<void> addNewPerson(
-      String name, int? cityId, int? townId, String tel, int cinsiyet) async {
-    final response =
-        await _repo.addNewPerson(name, cityId, townId, tel, cinsiyet);
-    if (response.statusCode == 200) {
-      final Map<String, dynamic>? responseData = response.data;
-      if (responseData?['basari'] == 1) {
-        if (kDebugMode) {
-          print('${responseData?['mesaj']}');
-        }
-      } else {
-        throw Exception('Kişi eklerken hata oluştu: ${responseData?['mesaj']}');
-      }
-    } else {
-      throw Exception('Kişi eklerken hata oluştu: ${response.statusCode}');
-    }
-  }
-
-  Future<List<String>> getCity() async {
-    final response = await _repo.getCity();
-    List<String> cityNames = [];
-    if (response.statusCode == 200) {
-      final Map<String, dynamic>? responseData = response.data;
-      if (responseData != null && responseData.containsKey('iller')) {
-        final List<dynamic> citiesData = responseData['iller'];
-        for (var cityData in citiesData) {
-          final String cityName = cityData['city_name'];
-          cityNames.add(cityName);
-          //final int cityId = cityData['city_id'];
-          if (kDebugMode) {
-            print('City Name: $cityNames');
-          }
-        }
-      }
-    }
-    return cityNames;
-  }
-
-  Future<List<String>> getTown(int cityId) async {
-    final response = await _repo.getTown(cityId);
-    List<String> townNames = [];
-    if (response.statusCode == 200) {
-      final Map<String, dynamic>? responseData = response.data;
-      if (responseData?['basari'] == 1 && responseData?['durum'] == 1) {
-        final List<dynamic> districtsData = responseData?['ilceler'];
-        for (var townData in districtsData) {
-          townNames.add(townData['town_name']);
-          if (kDebugMode) {
-            print('Town Names: ${(townNames)}');
-          }
-        }
-      }
-    }
-    return townNames; // Şehir adlarını içeren listeyi döndürüyoruz.
   }
 }

@@ -68,8 +68,8 @@ class PersonsDaoRepository {
   }
 
   Future<Response<Map<String, dynamic>>> addNewPerson(
-    String name,
     int? cityId,
+    String name,
     int? townId,
     String tel,
     int cinsiyet,
@@ -92,7 +92,7 @@ class PersonsDaoRepository {
     return _dio.get('http://www.motosikletci.com/api/iller');
   }
 
-  Future<Response<Map<String, dynamic>>> getTown(int cityId) async {
+  Future<Response<Map<String, dynamic>>> getTown(int? cityId) async {
     return _dio.post('http://www.motosikletci.com/api/ilceler', data: {
       'city_id': cityId,
     });

@@ -21,60 +21,6 @@ class _HomePageState extends State<HomePage> {
     context.read<HomePageCubit>().loadPersons();
   }
 
-  Future<void> _showAddPersonDialog(BuildContext context) async {
-    TextEditingController nameController = TextEditingController();
-    TextEditingController cityIdController = TextEditingController();
-    TextEditingController townIdController = TextEditingController();
-    TextEditingController telController = TextEditingController();
-    int selectedGender = 1;
-
-    await showDialog(
-      context: context,
-      builder: (context) {
-        return AlertDialog(
-          title: Text('Yeni Kişi Ekle'),
-          content: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              TextField(
-                controller: nameController,
-                decoration: InputDecoration(labelText: 'İsim'),
-              ),
-              TextField(
-                controller: cityIdController,
-                decoration: InputDecoration(labelText: 'Şehir ID'),
-              ),
-              TextField(
-                controller: townIdController,
-                decoration: InputDecoration(labelText: 'İlçe ID'),
-              ),
-              TextField(
-                controller: telController,
-                decoration: InputDecoration(labelText: 'Telefon'),
-              ), // Buradaki parantezi kapatmayı unutmuşsunuz
-            ],
-          ),
-          actions: [
-            ElevatedButton(
-              onPressed: () {
-                final homePageCubit = context.read<HomePageCubit>();
-                homePageCubit.addNewPerson(
-                  nameController.text,
-                  int.tryParse(cityIdController.text),
-                  int.tryParse(townIdController.text),
-                  telController.text,
-                  selectedGender,
-                );
-                Navigator.of(context).pop();
-              },
-              child: Text('Ekle'),
-            ),
-          ],
-        );
-      },
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -143,7 +89,6 @@ class _HomePageState extends State<HomePage> {
                                   context,
                                   MaterialPageRoute(
                                     builder: (context) => PersonDetail(
-                                      person: person,
                                       personId: personId,
                                     ),
                                   ),
@@ -203,7 +148,12 @@ class _HomePageState extends State<HomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          _showAddPersonDialog(context);
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const PersonDetail(),
+            ),
+          );
         },
         child: const Icon(Icons.add),
       ),
