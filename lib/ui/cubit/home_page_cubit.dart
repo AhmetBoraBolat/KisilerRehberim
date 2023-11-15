@@ -78,7 +78,6 @@ class HomePageCubit extends Cubit<List<Persons>> {
         print("deletePerson RESPONSE DATA : ${response.data}");
       }
       if (responseData?['basari'] == 1 && responseData?['durum'] == 3) {
-        // Kişi başarıyla silindi
         if (kDebugMode) {
           print('${responseData?['mesaj']!}');
         }

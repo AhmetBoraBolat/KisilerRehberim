@@ -1,10 +1,12 @@
+import 'dart:io';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../data/repo/personsdao_repository.dart';
 
-class UserDetailCubit extends Cubit<void> {
-  UserDetailCubit() : super(0);
+class UserDetailCubit extends Cubit<Map<String, dynamic>> {
+  UserDetailCubit() : super({});
 
   var _repo = PersonsDaoRepository();
 
@@ -14,16 +16,24 @@ class UserDetailCubit extends Cubit<void> {
       final Map<String, dynamic>? responseData = response.data;
       if (responseData?['basari'] == 1 && responseData?['durum'] == 1) {
         var userData = responseData!['kisi'];
+        emit(userData);
         return userData;
       }
     }
+
     throw Exception('Failed to fetch person details');
   }
 
-  Future<void> addNewPerson(
-      String name, int? cityId, int? townId, String tel, int cinsiyet) async {
+  Future<void> addNewPerson({
+    required String name,
+    required int? cityId,
+    required int? townId,
+    required String tel,
+    required int cinsiyet,
+    required File? image,
+  }) async {
     final response =
-        await _repo.addNewPerson(cityId, name, townId, tel, cinsiyet);
+        await _repo.addNewPerson(cityId, name, townId, tel, cinsiyet, image);
     if (response.statusCode == 200) {
       final Map<String, dynamic>? responseData = response.data;
       if (responseData?['basari'] == 1) {
@@ -52,6 +62,7 @@ class UserDetailCubit extends Cubit<void> {
         }
       }
     }
+    emit(cities);
     return cities;
   }
 
@@ -73,6 +84,7 @@ class UserDetailCubit extends Cubit<void> {
         }
       }
     }
+    emit(town);
     return town;
   }
 }

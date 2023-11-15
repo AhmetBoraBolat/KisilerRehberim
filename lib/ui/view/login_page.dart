@@ -21,7 +21,6 @@ class _LoginPageState extends State<LoginPage> {
       Navigator.pushReplacement(
           context, MaterialPageRoute(builder: (context) => const HomePage()));
     } else {
-      // Oturum açma başarısız.
       showDialog(
         context: context,
         builder: (BuildContext context) {
@@ -65,7 +64,7 @@ class _LoginPageState extends State<LoginPage> {
             TextField(
               controller: passwordController,
               decoration: const InputDecoration(labelText: 'Şifre'),
-              obscureText: true, // Şifreyi gizle
+              obscureText: true,
             ),
             SizedBox(height: 20),
             ElevatedButton(

@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:kisiler_rehberim/data/entity/persons.dart';
@@ -73,10 +75,10 @@ class PersonsDaoRepository {
     int? townId,
     String tel,
     int cinsiyet,
+    File? image,
   ) async {
     await checkAndRedirect();
-
-    return _dio.post('http://www.motosikletci.com/api/kisi-kaydet', data: {
+    FormData formData = FormData.fromMap({
       'email': email,
       'sifre': password,
       'kisi_id': 0,
@@ -84,8 +86,13 @@ class PersonsDaoRepository {
       'town_id': townId,
       'kisi_ad': name,
       'kisi_tel': tel,
-      "cinsiyet": cinsiyet,
+      'cinsiyet': cinsiyet,
+      'resim': await MultipartFile.fromFile(image!.path, filename: 'image.png'),
     });
+    return _dio.post(
+      'http://www.motosikletci.com/api/kisi-kaydet',
+      data: formData,
+    );
   }
 
   Future<Response<Map<String, dynamic>>> getCity() async {
